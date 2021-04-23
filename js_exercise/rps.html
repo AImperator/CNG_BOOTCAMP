@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>JavaScript</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <!-- Start of Site -->
+
+    <div class="js_background">
+
+    <!--Main Navigation-->
+    <header>
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark js_main">
+
+        <!--Additional Container-->
+        <div class="container">
+
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="js_home.html" style="font-weight: bold">JavaScript</a>
+
+          <!-- Collapse button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="js_home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="lightbulp.html">Lightbulp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="balloons.html">Balloons</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Rock Paper Scissors
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="todolist.html">To Do List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="flashcards.html">Flashcards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cal.html">Calculator</a>
+              </li>
+
+            </ul>
+            <!-- Links -->
+          </div>
+          <!-- Collapsible content -->
+
+        </div>
+        <!--Additional Container-->
+
+      </nav>
+      <!--/.Navbar-->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+      <!--Main container-->
+      <div class="container text-center">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-12 mt-2">
+
+            <h2 style="font-weight: bold">Rock Paper Scissors Game</h2>
+            <p>Welcome to a Rock, Paper, Scissors game where you play against the computer! First to 3 points wins!</p>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <p>Your Score</p>
+            <p id="player_score">0</p>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <p id="display">VS</p>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <p>Computer Score</p>
+            <p id="computer_score">0</p>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row mb-2">
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <button type="button" id="rbutton" class="btn js_main btn-rounded btn-lg w-55" onclick="start_round(0)">Rock</button>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <button type="button" id="pbutton" class="btn js_main btn-rounded btn-lg w-55" onclick="start_round(1)">Paper</button>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 mt-2">
+
+            <button type="button" id="sbutton" class="btn js_main btn-rounded btn-lg w-55" onclick="start_round(2)">Scissors</button>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <div class="border border-light">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-6 mt-2">
+
+            <p>Your choice</p>
+            <p>&downarrow;</p>
+            <img style="max-height: 20em" class="img-fluid" id="player_choice" src="" alt="">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 mt-2">
+
+            <p>Computers choice</p>
+            <p>&downarrow;</p>
+            <img style="max-height: 20em" class="img-fluid" id="computers_choice" src="" alt="">
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-12 mt-2">
+
+            <p id="round"></p>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        </div>
+
+      </div>
+      <!--Main container-->
+    </main>
+    <!--Main layout-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small js_main pt-4 mt-4 text-center">
+
+      <!-- Footer Links -->
+      <div class="container">
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+
+            <!-- Content -->
+            <h5 class="text-uppercase">JavaScript exercises</h5>
+            <p>Demonstration-Site of my solutions to the given JavaScript exercises</p>
+
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none pb-3">
+
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Base-menu</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="../index.html">Topic-Menu</a>
+              </li>
+              <li>
+                <a href="https://github.com/AImperator/CNG_BOOTCAMP.git"><i class="fab fa-github"></i> GitHub</a>
+              </li>
+              <li>
+                <a href="../impressum.html">Impressum</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Info -->
+      <div class="footer-copyright py-3">made by ITP-Wendisch</div>
+      <!-- Info -->
+
+    </footer>
+    <!-- Footer -->
+
+    </div>
+
+    <!-- End of Site -->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <!-- site specific scripts -->
+    <script>
+
+      var player_points = 0;
+      var computer_points = 0;
+      var player_win = 2;
+      var player_select = 0;
+      var computer_select = 0;
+      var player_score = document.getElementById("player_score");
+      var display = document.getElementById("display");
+      var computer_score = document.getElementById("computer_score");
+      var player_image = document.getElementById("player_choice");
+      var computer_image = document.getElementById("computers_choice");
+      var round_result = document.getElementById("round");
+      var player = "";
+      var computer = "";
+
+      function start_round(n)
+      {
+        player_select = n;
+        computer_select = Math.floor(Math.random() * 3);
+
+        player_win = exec_round(player_select, computer_select);
+
+        if (player_win === 0)
+        {
+          player_points = player_points + 1;
+        }
+        else if (player_win === 1)
+        {
+          computer_points = computer_points + 1;
+        }
+
+        show_round(player_select, computer_select, player_win);
+
+        if (player_points >= 3)
+        {
+          game_end(0);
+        }
+        if (computer_points >= 3)
+        {
+          game_end(1);
+        }
+
+      }
+
+      function exec_round(ps, cs)
+      {
+        var pw = 0;
+        if (ps === cs)
+        {
+          pw = 2;
+        }
+        else if (ps === 0 && cs === 1)
+        {
+          pw = 1;
+        }
+        else if (ps === 0 && cs === 2)
+        {
+          pw = 0;
+        }
+        else if (ps === 1 && cs === 0)
+        {
+          pw = 0;
+        }
+        else if (ps === 1 && cs === 2)
+        {
+          pw = 1;
+        }
+        else if (ps === 2 && cs === 0)
+        {
+          pw = 1;
+        }
+        else if (ps === 2 && cs === 1)
+        {
+          pw = 0;
+        }
+        return pw;
+      }
+
+      function show_round(ps, cs, ww)
+      {
+
+        if (ps === 0)
+        {
+          player_image.src="../img/Rock.png";
+          player = "rock";
+        }
+        else if (ps === 1)
+        {
+          player_image.src="../img/Paper.png";
+          player = "paper";
+        }
+        else if (ps === 2)
+        {
+          player_image.src="../img/Scissors.png";
+          player = "scissors";
+        }
+
+        if (cs === 0)
+        {
+          computer_image.src="../img/Rock.png";
+          computer = "rock";
+        }
+        else if (cs === 1)
+        {
+          computer_image.src="../img/Paper.png";
+          computer = "paper";
+        }
+        else if (cs === 2)
+        {
+          computer_image.src="../img/Scissors.png";
+          computer = "scissors";
+        }
+
+        if (ww === 0)
+        {
+          round_result.innerHTML = "Yay, " + player + " beats " + computer + "! You won this round!";
+        }
+        else if (ww === 1)
+        {
+          round_result.innerHTML = "Damn, " + computer + " beats " + player + "! You lost this round!";
+        }
+        else if (ww === 2)
+        {
+          round_result.innerHTML = "Huh, " + computer + " against " + player + " is a tie! Let´s try again!";
+        }
+
+        player_score.innerHTML = player_points;
+        computer_score.innerHTML = computer_points;
+      }
+
+      function game_end(n)
+      {
+        if (n === 0)
+        {
+          display.classList.add("font-weight-bold")
+          display.style ="color: green";
+          display.innerHTML = "You won the game! Well done!";
+        }
+
+        if (n === 1)
+        {
+          display.classList.add("font-weight-bold")
+          display.style = "color: red";
+          display.innerHTML = "You lost the game! Better luck next time!";
+        }
+
+        document.getElementById("rbutton").disabled = true;
+        document.getElementById("pbutton").disabled = true;
+        document.getElementById("sbutton").disabled = true;
+      }
+
+    </script>
+  </body>
+</html>

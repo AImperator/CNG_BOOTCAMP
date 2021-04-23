@@ -1,0 +1,203 @@
+#stage {
+    width: 1024px;
+    height: 1386px;
+}
+
+#coffee {
+    transform-origin: 517px 484px;
+}
+#coffee-badge {
+    transform-origin: 445px 488px;
+}
+#coffee-title {
+    transform-origin: 310px 396px;
+}
+#coffee-details {
+    transform-origin: 311px 489px;
+}
+
+#design {
+    transform-origin: 514px 603px;
+}
+#design-badge {
+    transform-origin: 580px 606px;
+}
+#design-title {
+    transform-origin: 712px 513px;
+}
+#design-details {
+    transform-origin: 710px 620px;
+}
+
+#build {
+    transform-origin: 511px 769px;
+}
+#build-badge {
+    transform-origin: 445px 775px;
+}
+#build-title {
+    transform-origin: 312px 680px;
+}
+#build-details {
+    transform-origin: 310px 790px;
+}
+
+#complain {
+    transform-origin: 512px 1002px;
+}
+#complain-badge {
+    transform-origin: 586px 1000px;
+}
+#complain-title {
+    transform-origin: 718px 921px;
+}
+#complain-details {
+    transform-origin: 717px 1021px;
+}
+
+#beer {
+    transform-origin: 513px 1199px;
+}
+#beer-badge {
+    transform-origin: 444px 1193px;
+}
+#beer-title {
+    transform-origin: 313px 1097px;
+}
+#beer-details {
+    transform-origin: 316px 1202px;
+}
+
+[id$=badge] { /* Any element with an id that ends in "badge" */
+    transform: scale(0.5, 0.5);
+}
+[id$=title] {
+    transform: scale(1.8) translate(0px, 48px);
+}
+[id$=details] {
+    transform: scale(0, 0);
+}
+
+#timeline > g:hover [id$=badge], #timeline > g:hover [id$=details] {
+    transform: scale(1, 1);
+}
+#timeline > g:hover [id$=title] {
+    transform: scale(1) translate(0px, 0px);
+}
+[id$=badge], [id$=title], [id$=details] {
+    transition: transform 0.25s ease-in-out;
+}
+
+@keyframes left-brace-intro {
+    0% {
+        transform: translateX(220px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(220px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes right-brace-intro {
+    0% {
+        transform: translateX(-220px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-220px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes grow-y {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+@keyframes grow-x {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes grow {
+    0% {
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.svgLoaded #logo {
+    animation: fade-in 0.5s ease-in-out;
+}
+.svgLoaded #quote-text {
+    animation: fade-in 0.5s ease-in-out 0.75s;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #quote-left-brace {
+    animation: left-brace-intro 1s ease-in-out 0.25s;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #quote-right-brace {
+    animation: right-brace-intro 1s ease-in-out 0.25s;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #background {
+    animation: grow-y 0.5s ease-in-out 1.25s;
+    transform-origin: 512px 300px;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #background > g {
+    animation: grow-x 0.25s ease-in-out 1.75s;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #background > g:last-of-type {
+    transform-origin: 458px 877px;
+}
+.svgLoaded #background > g:first-of-type {
+    transform-origin: 563px 877px;
+}
+.svgLoaded #coffee, .svgLoaded #design, .svgLoaded #build, .svgLoaded #complain, .svgLoaded #beer {
+    animation: grow 0.25s ease-in-out;
+    animation-fill-mode: backwards;
+}
+.svgLoaded #coffee {
+    animation-delay: 2s;
+}
+.svgLoaded #design {
+    animation-delay: 2.25s;
+}
+.svgLoaded #build {
+    animation-delay: 2.5s;
+}
+.svgLoaded #complain {
+    animation-delay: 2.75s;
+}
+.svgLoaded #beer {
+    animation-delay: 3s;
+}
+
+@font-face {
+    font-family: 'LeagueGothic';
+url("../fonts/league-gothic/league-gothic.eot.woff") format("woff");
+}

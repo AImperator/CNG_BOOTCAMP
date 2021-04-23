@@ -1,0 +1,92 @@
+/* Main Index and sitewide CSS */
+html{
+    scroll-behavior: smooth;
+}
+html, body, .max_size, #intro{
+    height: 100%;
+}
+#intro{
+    background: url("../img/matrix-code.gif") repeat fixed;
+}
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #4285F4;
+    }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #4285F4;
+    }
+}
+
+/* PHP CSS */
+.php_background{
+    background-color: #E3EFE5;
+}
+.php_main{
+    background-color: #FCFF55;
+}
+.php_secondary{
+    background-color: #7E968F;
+}
+.php_main_border{
+    border-color: #FCFF55 !important;
+}
+.php_secondary_border{
+    border-color: #BE4A32 !important;
+}
+#board{
+    display: block;
+    width: 800px;
+    height: 800px;
+    border-style: solid;
+}
+.w_tile{
+    float: left;
+    background: rgba(250,250,250,1);
+    width: 100px;
+    height: 100px;
+}
+.b_tile{
+    float: left;
+    background: rgba(0,0,0,1);
+    width: 100px;
+    height: 100px;
+}
+
+/* JavaScript CSS */
+.js_background{
+    background-color: #F5F5F3;
+}
+.js_main{
+    background-color: #82A673;
+}
+.js_secondary{
+    background-color: #4BC1E4;
+}
+.js_main_border{
+    border-color: #82A673 !important;
+}
+.js_secondary_border{
+    border-color: #4BC1E4 !important;
+}
+
+/* JQuery CSS */
+.jq_background{
+    background-color: #EDEADF;
+}
+.jq_main{
+    background-color: #7BB4DC;
+}
+.jq_secondary{
+    background-color: #9636D6;
+}
+.jq_main_border{
+    border-color: #0013FF !important;
+}
+.jq_secondary_border{
+    border-color: #18181F !important;
+}

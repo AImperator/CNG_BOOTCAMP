@@ -1,0 +1,57 @@
+html
+{
+    background: rgba(0,0,0,1);
+    font: "Times New Roman";
+    font-size: 15px;
+}
+body
+{
+    background: rgba(140,140,140,0.75);
+    margin: 5% auto;
+    max-width: 500px;
+    padding: 2%;
+}
+h1
+{
+    border-style: solid;
+    text-align: center;
+}
+h2
+{
+    text-align: center;
+    text-decoration-line: underline;
+}
+form
+{
+    text-align: center;
+}
+label
+{
+    background-color: cadetblue;
+    margin-left: 2%;
+}
+input, select
+{
+    background-color: aqua;
+}
+#result
+{
+    margin: 1% auto;
+    background-color: aqua;
+    border-style: solid;
+    border-width: medium;
+    text-align: center;
+}
+#left_result
+{
+    margin: 1% auto;
+    background-color: aqua;
+    border-style: solid;
+    border-width: medium;
+}
+foot
+{
+    display: block;
+    border-top-style: solid;
+    text-align: center;
+}
