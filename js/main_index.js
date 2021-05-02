@@ -1,20 +1,20 @@
 $(document).ready(function(){
 
     $("a[href='#php']").hover(function(){
-        $(this).attr("style", "background-color: #FCFF55; color: black");
+        $(this).attr("style", "background-color: black; color: #FCFF55");
     }, function(){
-        $(this).attr("style", "color: white");
+        $(this).removeAttr("style");
     });
 
     $("a[href='#js']").hover(function(){
-        $(this).attr("style", "background-color: #82A673; color: black");
+        $(this).attr("style", "background-color: black; color: #82A673");
     }, function(){
-        $(this).attr("style", "color: white");
+        $(this).removeAttr("style");
     });
 
     $("a[href='#jq']").hover(function(){
-        $(this).attr("style", "background-color: #7BB4DC; color: black");
+        $(this).attr("style", "background-color: black; color: #7BB4DC");
     }, function(){
-        $(this).attr("style", "color: white");
+        $(this).removeAttr("style");
     });
 });

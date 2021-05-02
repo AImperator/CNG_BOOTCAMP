@@ -1,8 +1,8 @@
 <?php
 
 /**
-*This function starts the necessary funktions to print the correct shape.
-*It also converts the arrays given from the funktions to a html-paragraph string.
+*This function starts the necessary functions to print the correct shape.
+*It also converts the arrays given from the functions to a html-paragraph string.
 *@param int $n
 *@param string $t
 *@param bool $s
@@ -14,15 +14,15 @@ function print_exe(int $n, string $t, bool $s) :string
     {
         case "triangle":
             $print = print_triangle($n, $s);
-            $result ="<p id='left_result'>".implode("<br>", $print)."</p>";
+            $result ="<p>".implode("<br>", $print)."</p>";
             break;
         case "pyramid":
             $print = print_pyramid($n, $s);
-            $result = "<p id='result'>".implode("<br>", $print)."</p>";
+            $result = "<p style='text-align: center'>".implode("<br>", $print)."</p>";
             break;
         case "diamond":
             $print = print_diamond($n, $s);
-            $result = "<p id='result'>".implode("<br>", $print)."</p>";
+            $result = "<p style='text-align: center'>".implode("<br>", $print)."</p>";
             break;
     }
     return $result;

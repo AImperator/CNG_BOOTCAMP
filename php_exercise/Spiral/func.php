@@ -16,11 +16,11 @@ function spiral(int $num): string
     $result = "";
     foreach ($cells as $cell) {
         if ($i == 1) {
-            $result .= "<wrap class='line'>";
+            $result .= "<div class='row' style='height: 60px'><div class='col-12'>";
         }
         $result .= get_html($cell);
         if ($i == $num) {
-            $result .= "</wrap>";
+            $result .= "</div></div>";
             $i = 0;
         }
         $i++;
@@ -151,19 +151,19 @@ class Cell
 }
 
 /**
- * Generates the HTML version of a cell as paragraph. Either as normal grid cell or a member cell of the spiral.
+ * Generates the HTML version of a cell. Either as normal grid cell or a member cell of the spiral.
  * @param Cell $cell
  * @return string
  */
 function get_html(Cell $cell): string
 {
     if ($cell->get_color() == true) {
-        return "<p class='spiral'>Cell-number: " . $cell->get_number() .
+        return "<div class='spiral_tile php_main'><p class='cell_info'>Cell-number: " . $cell->get_number() .
             "<br>" . "X: " . $cell->get_x_coord() .
-            " | " . "Y: " . $cell->get_y_coord() . "</p>";
+            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
     } else {
-        return "<p class='show'>Cell-number: " . $cell->get_number() .
+        return "<div class='stock_tile php_secondary'><p class='cell_info'>Cell-number: " . $cell->get_number() .
             "<br>" . "X: " . $cell->get_x_coord() .
-            " | " . "Y: " . $cell->get_y_coord() . "</p>";
+            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
     }
 }

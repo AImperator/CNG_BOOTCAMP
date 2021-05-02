@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>JavaScript</title>
+    <title>Chessboard</title>
     <!-- MDB icon -->
     <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -18,57 +18,54 @@
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
-<!-- Start of Site -->
-
-<div class="js_background min-vh-100">
+    <body class="php_background">
+    <!--Start of Site-->
 
     <!--Main Navigation-->
     <header>
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark js_main">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light php_main">
 
             <!--Additional Container-->
             <div class="container">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="js_home.html">JavaScript</a>
+                <a class="navbar-brand" href="../php_home.html" style="font-weight: bold">PHP</a>
 
                 <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Collapsible content -->
                 <div class="collapse navbar-collapse" id="basicExampleNav">
-
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="js_home.html">Home</a>
+                            <a class="nav-link" href="../php_home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="lightbulp.html">Lightbulp</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="balloons.html">Balloons</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="rps.html">Rock Paper Scissors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="todolist.html">To Do List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="flashcards.html">Flashcards</a>
+                            <a class="nav-link" href="../Taschenrechner/calculator.php">Calculator</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Calculator
-                                <span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="#">Chessboard<span class="sr-only">(current)</span></a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Palindrome/palindrome.php">Palindrome</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../WeatherMonitoringCenter/wmc.php">Weather Monitoring Center</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Shapes/shapes.php">Shapes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Spiral/spiral.php">Spiral</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Sudoku/sudoku.php">Sudoku</a>
+                        </li>
                     </ul>
                     <!-- Links -->
                 </div>
@@ -78,7 +75,7 @@
             <!--Additional Container-->
 
         </nav>
-        <!--/.Navbar-->
+        <!-- Navbar -->
     </header>
     <!--Main Navigation-->
 
@@ -87,113 +84,95 @@
         <!--Main container-->
         <div class="container">
 
-            <!--Grid row-->
-            <div class="row text-center">
+            <div class="row justify-content-center mb-5">
 
-                <!--Grid column-->
-                <div class="col-lg-12 mt-2">
-
-                    <h2 style="font-weight: bold">Chess Board for Tablets</h2>
-
-                </div>
-                <!--Grid column-->
+                <h2 style="font-weight: bold">Chess Board for Tablets</h2>
 
             </div>
-            <!--Grid row-->
 
-            <!--Grid row-->
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center">
 
-                <!--Grid column-->
-                <div class="col-12 mt-2">
-
-                    <div id='board'>
-                        <?php
+                <?php
                         require 'functions.php';
                         echo print_board();
-                        ?>
-                    </div>
-
-                </div>
-                <!--Grid column-->
+                ?>
 
             </div>
-            <!--Grid row-->
+
+            <div class="row justify-content-center mt-5">
+
+                <p>If the chess board is not displayed correctly, try it again on a bigger screen.</p>
+
+            </div>
 
         </div>
         <!--Main container-->
     </main>
     <!--Main layout-->
 
-    <!--Footer-->
-    <footer class="fixed-bottom">
-        <!-- Footer -->
-        <footer class="page-footer font-small js_main pt-4 mt-4 text-center">
+    <!-- Footer -->
+    <footer class="page-footer font-small php_main pt-4 mt-4 text-center">
+        <div class="container" style="color: black">
 
-            <!-- Footer Links -->
-            <div class="container">
+            <!-- Grid row -->
+            <div class="row">
 
-                <!-- Grid row -->
-                <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-6">
 
-                    <!-- Grid column -->
-                    <div class="col-md-6 mt-md-0 mt-3">
-
-                        <!-- Content -->
-                        <h5 class="text-uppercase">JavaScript exercises</h5>
-                        <p>Demonstration-Site of my solutions to the given JavaScript exercises</p>
-
-                    </div>
-                    <!-- Grid column -->
-
-                    <hr class="clearfix w-100 d-md-none pb-3">
-
-                    <!-- Grid column -->
-                    <div class="col-md-6 mt-md-0 mt-3">
-
-                        <!-- Links -->
-                        <h5 class="text-uppercase">Base-menu</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../../index.html">Topic-Menu</a>
-                            </li>
-                            <li>
-                                <a href="../../impressum.html">Impressum</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <!-- Grid column -->
+                    <!-- Content -->
+                    <h5 class="text-uppercase">PHP exercises</h5>
+                    <p>Demonstration-Site of my solutions to the given PHP exercises</p>
 
                 </div>
-                <!-- Grid row -->
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Base-menu</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="../../index.html" style="color: black; border: black;">Topic-Menu</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/AImperator/CNG_BOOTCAMP.git" style="color: black; border: black;"><i class="fab fa-github"></i> GitHub</a>
+                        </li>
+                        <li>
+                            <a href="../../impressum.html" style="color: black; border: black;">Impressum</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
 
             </div>
-            <!-- Footer Links -->
+            <!-- Grid row -->
 
-            <!-- Info -->
-            <div class="footer-copyright py-3">made by ITP-Wendisch</div>
-            <!-- Info -->
+        </div>
 
-        </footer>
-        <!-- Footer -->
+        <!-- Info -->
+        <div class="footer-copyright py-3">made by ITP-Wendisch</div>
+        <!-- Info -->
+
     </footer>
-    <!--Footer-->
+    <!-- Footer -->
 
-</div>
+    <!-- End of Site -->
 
-<!-- End of Site -->
-
-<!-- jQuery -->
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="../../js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="../../js/mdb.min.js"></script>
-<!-- site specific scripts -->
-<script></script>
-</body>
+    <!-- jQuery -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../../js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../../js/mdb.min.js"></script>
+    <!-- site specific scripts -->
+    <script></script>
+    </body>
 </html>

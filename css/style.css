@@ -6,7 +6,11 @@ html, body, .max_size, #intro{
     height: 100%;
 }
 #intro{
-    background: url("../img/matrix-code.gif") repeat fixed;
+    background: url("../img/clouds.gif")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .top-nav-collapse {
     background-color: #4285F4;
@@ -33,28 +37,53 @@ html, body, .max_size, #intro{
     background-color: #7E968F;
 }
 .php_main_border{
-    border-color: #FCFF55 !important;
+    border-color: #FCFF55;
 }
 .php_secondary_border{
-    border-color: #BE4A32 !important;
-}
-#board{
-    display: block;
-    width: 800px;
-    height: 800px;
-    border-style: solid;
+    border-color: #BE4A32;
 }
 .w_tile{
-    float: left;
+    display: inline-block;
     background: rgba(250,250,250,1);
     width: 100px;
     height: 100px;
 }
 .b_tile{
-    float: left;
+    display: inline-block;
     background: rgba(0,0,0,1);
     width: 100px;
     height: 100px;
+}
+.stock_tile {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 0.6em;
+    color: #7E968F;
+}
+.spiral_tile {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 0.6em;
+    color: #FCFF55;
+}
+.wmc_display {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    margin-top: 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1);
+}
+.wmc_show {
+    display: inline-block;
+    float: left;
+    margin: 0.75em;
+}
+.line{
+    display: block;
+    height: 60px;
 }
 
 /* JavaScript CSS */
@@ -68,10 +97,10 @@ html, body, .max_size, #intro{
     background-color: #4BC1E4;
 }
 .js_main_border{
-    border-color: #82A673 !important;
+    border-color: #82A673;
 }
 .js_secondary_border{
-    border-color: #4BC1E4 !important;
+    border-color: #4BC1E4;
 }
 
 /* JQuery CSS */
@@ -85,8 +114,11 @@ html, body, .max_size, #intro{
     background-color: #9636D6;
 }
 .jq_main_border{
-    border-color: #0013FF !important;
+    border-color: #7BB4DC;
 }
 .jq_secondary_border{
-    border-color: #18181F !important;
+    border-color: #18181F;
+}
+#finish, .selected_product{
+    display: none;
 }
