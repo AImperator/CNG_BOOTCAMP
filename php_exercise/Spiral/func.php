@@ -109,6 +109,24 @@ function splat(array $cells, int $x, int $y)
     }
 }
 
+/**
+ * Generates the HTML version of a cell. Either as normal grid cell or a member cell of the spiral.
+ * @param Cell $cell
+ * @return string
+ */
+function get_html(Cell $cell): string
+{
+    if ($cell->get_color() == true) {
+        return "<div class='spiral_tile php_main'><p class='cell_info'>Cell-number: " . $cell->get_number() .
+            "<br>" . "X: " . $cell->get_x_coord() .
+            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
+    } else {
+        return "<div class='stock_tile php_secondary'><p class='cell_info'>Cell-number: " . $cell->get_number() .
+            "<br>" . "X: " . $cell->get_x_coord() .
+            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
+    }
+}
+
 class Cell
 {
     private $cell_number;
@@ -147,23 +165,5 @@ class Cell
     public function set_color($cell_color)
     {
         $this->cell_color = $cell_color;
-    }
-}
-
-/**
- * Generates the HTML version of a cell. Either as normal grid cell or a member cell of the spiral.
- * @param Cell $cell
- * @return string
- */
-function get_html(Cell $cell): string
-{
-    if ($cell->get_color() == true) {
-        return "<div class='spiral_tile php_main'><p class='cell_info'>Cell-number: " . $cell->get_number() .
-            "<br>" . "X: " . $cell->get_x_coord() .
-            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
-    } else {
-        return "<div class='stock_tile php_secondary'><p class='cell_info'>Cell-number: " . $cell->get_number() .
-            "<br>" . "X: " . $cell->get_x_coord() .
-            " | " . "Y: " . $cell->get_y_coord() . "</p></div>";
     }
 }

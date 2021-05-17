@@ -71,19 +71,151 @@
       </nav>
       <!-- Navbar -->
     </header>
-    <!--Main Navigation-->
 
     <!--Main layout-->
     <main class="mt-5">
       <!--Main container-->
       <div class="container">
 
+        <!--Grid row-->
+        <div class="row">
 
+          <!--Grid column-->
+          <div class="col mb-2 text-center">
+
+            <h2 class="font-weight-bold">The Labyrinth</h2>
+
+          </div>
+
+        </div>
+
+        <!--Display-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col">
+
+            <div id="playground" class="w-100 h-100 border jq_secondary_border p-2"></div>
+
+          </div>
+
+        </div>
+
+        <!--Controls-->
+        <div class="row mt-4 justify-content-between">
+
+          <!--Grid column-->
+          <div class="col-4">
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <button id="btn_generate" class="btn btn-sm jq_main">generate</button>
+
+            </div>
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <button id="btn_solve" class="btn btn-sm jq_main">solve</button>
+
+            </div>
+
+          </div>
+
+          <!--Grid column-->
+          <div class="col-4 mt-2">
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <div class="badge jq_secondary text-wrap" >
+                <h6>Select the size of the board:</h6>
+              </div>
+
+            </div>
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <div id="size" class="btn-group" data-size="small" role="group">
+                <button id="btn_small" type="button" class="btn btn-sm jq_secondary selected">small</button>
+                <button id="btn_medium" type="button" class="btn btn-sm jq_main">medium</button>
+                <button id="btn_large" type="button" class="btn btn-sm jq_main">large</button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--Grid column-->
+          <div class="col-4 align-bottom">
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <!--Grid column-->
+              <div class="col-3 text-center">
+
+                <button id="move_up" class="btn jq_main btn-sm">&uarr;</button>
+
+              </div>
+
+            </div>
+
+            <!--Grid row-->
+            <div class="row justify-content-center">
+
+              <!--Grid column-->
+              <div class="col-3 m-1 text-center">
+
+                <button id="move_left" class="btn jq_main btn-sm">&larr;</button>
+
+              </div>
+
+              <!--Grid column-->
+              <div class="col-3 m-1 text-center">
+
+                <button id="move_down" class="btn jq_main btn-sm">&darr;</button>
+
+              </div>
+
+              <!--Grid column-->
+              <div class="col-3 m-1 text-center">
+
+                <button id="move_right" class="btn jq_main btn-sm">&rarr;</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--Win-Modal-->
+        <div class="modal fade" id="win_modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="background-image: url('media/crown.png')">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body jq_main text-center">
+                <h2 class="font-weight-bold">Congratulations, you won!</h2>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn jq_secondary" data-dismiss="modal">Close</button>
+                <button id="btn_new_game" type="button" class="btn jq_main">new game</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
       <!--Main container-->
     </main>
-    <!--Main layout-->
 
     <!-- Footer -->
     <footer class="page-footer font-small jq_main pt-4 mt-4 text-center">
@@ -135,10 +267,8 @@
       <!-- Info -->
 
     </footer>
-    <!-- Footer -->
 
     <!--End of Site-->
-
     <!-- jQuery -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -148,6 +278,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../../js/mdb.min.js"></script>
     <!-- site specific scripts -->
-    <script></script>
+    <script src="./data/jq_lab.js"></script>
   </body>
 </html>

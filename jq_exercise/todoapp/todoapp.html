@@ -93,29 +93,89 @@
         <div class="todoapp border jq_secondary_border p-2">
 
           <!--Grid row-->
-          <div class="row text-center">
+          <div class="row text-center justify-content-between">
 
             <!--Grid col-->
-            <div class="col">
+            <div class="col-2 spinner" style="opacity: 0">
 
-              <label for="new-todo">New entry:</label>
-              <input id="new-todo" class="m-2" placeholder="What needs to be done?" autofocus>
-              <a type="button" id="btn_save"><i class="far fa-save fa-lg"></i></a>
+              <div class="row">
+
+                <div class="col-12 text-center">
+
+                  <p class="font-weight-bold text-uppercase">processing...</p>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-12 text-center">
+
+                  <div class="spinner-border text-primary" role="status"></div>
+
+                </div>
+
+              </div>
 
             </div>
 
-          </div>
+            <!--Grid col-->
+            <div class="col-6">
 
-          <!--Grid row-->
-          <div class="row text-center mb-5">
+              <!--Grid row-->
+              <div class="row text-center">
+
+                <!--Grid col-->
+                <div class="col">
+
+                  <label for="new-todo">New entry:</label>
+                  <input type="text" id="new-todo" class="m-2" placeholder="What needs to be done?">
+                  <a type="button" id="btn_save"><i class="far fa-save fa-lg"></i></a>
+
+                </div>
+
+              </div>
+
+              <!--Grid row-->
+              <div class="row text-center mb-5">
+
+                <!--Grid col-->
+                <div class="col">
+
+                  <!-- Default switch -->
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="slide_mark">
+                    <label class="custom-control-label" for="slide_mark">Mark all as completed</label>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
 
             <!--Grid col-->
-            <div class="col">
+            <div class="col-2 spinner" style="opacity: 0">
 
-              <!-- Default switch -->
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="slide_mark">
-                <label class="custom-control-label" for="slide_mark">Mark all as completed</label>
+              <div class="row">
+
+                <div class="col-12 text-center">
+
+                  <p class="font-weight-bold text-uppercase">processing...</p>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-12 text-center">
+
+                  <div class="spinner-border text-primary" role="status"></div>
+
+                </div>
+
               </div>
 
             </div>
@@ -153,7 +213,7 @@
 
               <p class="mb-0" style="text-underline: black">Filter</p>
               <div class="btn-group" role="group">
-                  <button id="filter_all" type="button" class="btn btn-sm lighten-2">&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</button>
+                  <button id="filter_all" type="button" class="btn btn-sm lighten-2 jq_main">&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</button>
                   <button id="filter_open" type="button" class="btn btn-sm lighten-2">&nbsp;&nbsp;&nbsp;OPEN&nbsp;&nbsp;</button>
                   <button id="filter_comp" type="button" class="btn btn-sm lighten-2">COMPLETED</button>
                 </div>
@@ -246,6 +306,6 @@
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
     <script src="../../node_modules/handlebars/dist/handlebars.js"></script>
     <script src="../../node_modules/director/build/director.js"></script>
-    <script src="../../js/todoapp.js"></script>
+    <script src="data/todoapp.js"></script>
   </body>
 </html>

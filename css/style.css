@@ -122,3 +122,35 @@ html, body, .max_size, #intro{
 #finish, .selected_product{
     display: none;
 }
+.floor{
+    display: inline-block;
+    overflow: hidden;
+    background-color: #D3D3D3;
+    min-height: 50px;
+    min-width: 50px;
+    color: #D3D3D3;
+}
+.wall{
+    display: inline-block;
+    overflow: hidden;
+    background-color: #696969;
+    min-height: 50px;
+    min-width: 50px;
+    color: #696969;
+}
+.start_finish{
+    display: inline-block;
+    overflow: hidden;
+    background-color: #EEC900;
+    min-height: 50px;
+    min-width: 50px;
+    color: #EEC900;
+}
+.player{
+    display: inline-block;
+    overflow: hidden;
+    background-color: #18181F;
+    min-height: 50px;
+    min-width: 50px;
+    color: #18181F;
+}
