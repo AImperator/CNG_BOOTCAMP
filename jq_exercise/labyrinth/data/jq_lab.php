@@ -1,5 +1,4 @@
 <?php
-
 //Functions
 /**
  *Switch that catches jquery call and initiate php functions.
@@ -11,6 +10,9 @@ switch ($_POST["a"])
 {
     case "create_playground":
         create_playground($_POST["b"]);
+        break;
+    case "create_debug":
+        create_debug_playground($_POST["b"]);
         break;
     default:
         break;
@@ -75,7 +77,7 @@ function build_walls(array $playground, int $size): array
         }
     }
 
-    //Build Random maze walls
+    //Build random maze walls
     $chamber_store = [];
     $vertical_block = [];
     $horizontal_block = [];
@@ -178,6 +180,83 @@ function convert_to_html(array $code, int $size): string
     }
     return $playground;
 }
+
+
+
+//Debug specific functions
+/**
+ *This is the DEBUG main function, that calls a necessary functions to create the playground.
+ * @param string $n
+ * @echo string
+ */
+function create_debug_playground($size){
+    $playground_code = create_floor($size);
+    $playground_code = build_debug_walls($playground_code, $size);
+    echo convert_to_html($playground_code, $size);
+}
+
+/**
+ * Builds fix walls to debug on the floored playground.
+ * @param array $playground
+ * @param int $size
+ * @return array
+ */
+function build_debug_walls(array $playground, int $size): array
+{
+    //Build the fix outer walls
+    foreach ($playground as $outer_wall) {
+        if ($outer_wall->get_x() == 1 || $outer_wall->get_y() == 1){
+            $outer_wall->set_kind("wall");
+        }
+        if ($outer_wall->get_x() == $size || $outer_wall->get_y() == $size){
+            $outer_wall->set_kind("wall");
+        }
+    }
+
+    //Build fix maze walls
+    foreach ($playground as $maze_wall) {
+        if ($maze_wall->get_x() == 6 || $maze_wall->get_y() == 6){
+            $maze_wall->set_kind("wall");
+        }
+        if ($maze_wall->get_x() == 12 || $maze_wall->get_y() == 12){
+            $maze_wall->set_kind("wall");
+        }
+    }
+
+    //Set the fix doors
+    foreach ($playground as $door) {
+        if (($door->get_x() == 6 || $door->get_x() == 12) && ($door->get_y() == 3 || $door->get_y() == 9 || $door->get_y() == 15))
+            $door->set_kind("floor");
+        if (($door->get_y() == 6 || $door->get_y() == 12) && ($door->get_x() == 3 || $door->get_x() == 9 || $door->get_x() == 15))
+            $door->set_kind("floor");
+    }
+
+    //Set the fix start and finish
+    foreach ($playground as $st_fin) {
+        //Fix Finish
+        if  ($st_fin->get_x() == 2 && $st_fin->get_y() == 1)
+        {
+            $st_fin->set_kind("start_finish");
+        }
+        //Fix Start
+        if  ($st_fin->get_x() == $size - 1 && $st_fin->get_y() == $size)
+        {
+            $st_fin->set_kind("start_finish");
+        }
+    }
+
+    //Set the fix player start position
+    foreach ($playground as $player) {
+        if  ($player->get_x() == $size - 1 && $player->get_y() == $size)
+        {
+            $player->set_kind("player");
+        }
+    }
+
+    return $playground;
+}
+
+
 
 //Classes
 /**

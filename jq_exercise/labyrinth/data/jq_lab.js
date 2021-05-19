@@ -99,6 +99,28 @@ $(document).ready(function (){
     $("#btn_solve").on("click", function (){
 
     });
+    /**
+     * Debug mode
+     */
+    $("#btn_debug").on("click", function (){
+        if ($("#btn_debug").hasClass("btn-primary")){
+            $(this).removeClass("btn-primary").fadeTo("fast", 0.2);
+            $("#btn_modal").fadeTo("fast", 0).attr("disabled", true);
+            $("#btn_new_game").fadeTo("fast", 1).removeAttr("disabled");
+            $("#playground").html("");
+        }
+        else {
+            $(this).addClass("btn-primary").fadeTo("fast", 1);
+            $("#btn_modal").fadeTo("fast", 1).removeAttr("disabled");
+            $("#btn_new_game").fadeTo("fast", 0.5).attr("disabled", true);
+            $.post("./data/jq_lab.php", {
+                    a : "create_debug",
+                    b : 18 },
+                function(data){
+                $("#playground").html(data);
+            });
+        }
+    });
 });
 
 // Functions

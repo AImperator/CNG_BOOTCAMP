@@ -193,24 +193,42 @@
 
         </div>
 
-        <!--Win-Modal-->
-        <div class="modal fade" id="win_modal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header" style="background-image: url('media/crown.png')">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body jq_main text-center">
-                <h2 class="font-weight-bold">Congratulations, you won!</h2>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn jq_secondary" data-dismiss="modal">Close</button>
-                <button id="btn_new_game" type="button" class="btn jq_main">new game</button>
+        <!--Win-Modal and Debug-->
+        <div class="row text-center">
+
+          <div class="col-4">
+            <button id="btn_modal" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#win_modal" style="opacity: 0" disabled>
+              Launch win modal
+            </button>
+          </div>
+
+          <div class="col-4">
+            <button id="btn_debug" type="button" class="btn btn-sm" style="opacity: 0.2">
+          debug
+        </button>
+          </div>
+
+          <div class="col-4">
+            <div class="modal fade" id="win_modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-image: url('media/crown.png')">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body jq_main text-center">
+                    <h2 class="font-weight-bold">Congratulations, you won!</h2>
+                  </div>
+                  <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn jq_secondary" data-dismiss="modal">Close</button>
+                    <button id="btn_new_game" type="button" class="btn jq_main">new game</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
