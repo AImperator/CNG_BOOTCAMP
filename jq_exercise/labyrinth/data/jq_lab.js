@@ -19,12 +19,8 @@ $(document).ready(function (){
      * from modal - calls function in php file and insert data into html file
      */
     $("#btn_new_game").on("click", function() {
-        let playground_size = $("#size").attr("data-size");
-        $.post("./data/jq_lab.php", {
-            a : "create_playground",
-            b : playground_size }, function(data) {
-            $("#playground").html(data);
-        });
+        $("#btn_generate").click();
+        $("#btn_close").click();
     });
     /**
      * selecting bord size small
