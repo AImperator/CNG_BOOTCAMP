@@ -1,3 +1,7 @@
+$.game = {
+    // for later on
+};
+
 // Main
 $(document).ready(function (){
     /**
@@ -54,44 +58,44 @@ $(document).ready(function (){
      * gathering data and calls move function to move the player
      */
     $("#move_up").on("click", function (){
-        let pos_id = ($(".player").attr("id").split("-"));
+        let pos_id = ($(".player").attr("id").split("_"));
         let pos_x = parseInt(pos_id[0]);
         let pos_y = parseInt(pos_id[1]);
         let go_y = pos_y - 1;
-        move(pos_x, pos_y, pos_x, go_y);
+        $.game.move(pos_x, pos_y, pos_x, go_y);
     });
     /**
      * Controls Mouse
      * gathering data and calls move function to move the player
      */
     $("#move_down").on("click", function (){
-        let pos_id = ($(".player").attr("id").split("-"));
+        let pos_id = ($(".player").attr("id").split("_"));
         let pos_x = parseInt(pos_id[0]);
         let pos_y = parseInt(pos_id[1]);
         let go_y = pos_y + 1;
-        move(pos_x, pos_y, pos_x, go_y);
+        $.game.move(pos_x, pos_y, pos_x, go_y);
     });
     /**
      * Controls Mouse
      * gathering data and calls move function to move the player
      */
     $("#move_left").on("click", function (){
-        let pos_id = ($(".player").attr("id").split("-"));
+        let pos_id = ($(".player").attr("id").split("_"));
         let pos_x = parseInt(pos_id[0]);
         let pos_y = parseInt(pos_id[1]);
         let go_x = pos_x - 1;
-        move(pos_x, pos_y, go_x, pos_y);
+        $.game.move(pos_x, pos_y, go_x, pos_y);
     });
     /**
      * Controls Mouse
      * gathering data and calls move function to move the player
      */
     $("#move_right").on("click", function (){
-        let pos_id = ($(".player").attr("id").split("-"));
+        let pos_id = ($(".player").attr("id").split("_"));
         let pos_x = parseInt(pos_id[0]);
         let pos_y = parseInt(pos_id[1]);
         let go_x = pos_x + 1;
-        move(pos_x, pos_y, go_x, pos_y);
+        $.game.move(pos_x, pos_y, go_x, pos_y);
     });
     /**
      * autopilot
@@ -105,13 +109,13 @@ $(document).ready(function (){
     $("#btn_debug").on("click", function (){
         if ($("#btn_debug").hasClass("btn-primary")){
             $(this).removeClass("btn-primary").fadeTo("fast", 0.2);
-            $("#btn_modal").fadeTo("fast", 0).attr("disabled", true);
+            $("#btn_modal").attr("hidden", true);
             $("#btn_new_game").fadeTo("fast", 1).removeAttr("disabled");
             $("#playground").html("");
         }
         else {
             $(this).addClass("btn-primary").fadeTo("fast", 1);
-            $("#btn_modal").fadeTo("fast", 1).removeAttr("disabled");
+            $("#btn_modal").removeAttr("hidden");
             $("#btn_new_game").fadeTo("fast", 0.5).attr("disabled", true);
             $.post("./data/jq_lab.php", {
                     a : "create_debug",
@@ -131,11 +135,15 @@ $(document).ready(function (){
  * @param go_x
  * @param go_y
  */
-function move(pos_x, pos_y, go_x, go_y){
-    let pos_id = pos_x+" - "+pos_y;
-    let go_id = go_x+" - "+go_y;
-    let switch_input = $("#size").attr("data-size");
-    let selected_size = 0;
+$.game.move = function (pos_x, pos_y, go_x, go_y){
+    let pos_id = pos_x+"_"+pos_y;
+    let go_id = go_x+"_"+go_y;
+
+    if ($("#btn_debug").hasClass("btn-primary")){
+        switch_input = "medium";
+    } else {
+        switch_input = $("#size").attr("data-size");
+    }
     switch (switch_input){
         case "small":
             selected_size = 12;
@@ -147,19 +155,22 @@ function move(pos_x, pos_y, go_x, go_y){
             selected_size = 24;
             break;
     }
-    let start = (selected_size - 1)+" - "+selected_size;
-    let finish = 2+" - "+1;
-    if ($(go_id+".floor") || $(go_id+".start_finish")){
-        $(pos_id).removeClass("player");
-        if ($(pos_id) === $(start) || $(pos_id) === $(finish)){
-            $(pos_id).addClass("start_finish");
+    let startCell =  $("#"+(selected_size - 1)+"_"+selected_size);
+    let finishCell =  $("#2_1");
+    let positionCell =  $("#"+pos_id);
+    let goToCell =  $("#"+go_id);
+
+    if (goToCell.hasClass("floor") || goToCell.hasClass("start_finish")){
+        positionCell.removeClass("player");
+        if (positionCell.attr("id") === startCell.attr("id") || positionCell.attr("id") === finishCell.attr("id")){
+            positionCell.addClass("start_finish");
         }
         else {
-            $(pos_id).addClass("floor");
+            positionCell.addClass("floor");
         }
-        $(go_id).removeClass("floor").removeClass("start_finish").addClass("player");
-        if ($(go_id) === $(finish)){
-            $(this).toggle($("#win_modal"));
+        goToCell.removeClass("floor").removeClass("start_finish").addClass("player");
+        if (goToCell.attr("id") === finishCell.attr("id")){
+            $("#btn_modal").click();
         }
     }
 }

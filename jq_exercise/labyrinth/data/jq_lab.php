@@ -52,7 +52,7 @@ function create_floor(int $size): array
     $counter = 0;
     for ($rows = 1; $rows <= $size; $rows++) {
         for ($cols = 1; $cols <= $size; $cols++) {
-            $i = $cols . " - " . $rows;
+            $i = $cols . "_" . $rows;
             $playground[$counter] = new Part_of_playground($i, $cols, $rows, "floor");
             $counter++;
         }
